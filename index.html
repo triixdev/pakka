@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'self';script-src 'self';connect-src 'none';form-action 'none';base-uri 'none'">
+<title>Pakka</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Pakka</h1>
+<p>Keep proof for your rented room. Get your deposit back. Everything stays on this device.</p></header>
+<section id="lock" hidden class="noprint"><h2>Unlock</h2>
+<form id="unlock"><label for="up">Passphrase</label><input id="up" type="password" autocomplete="off" required>
+<button>Unlock</button><button type="button" class="quiet" id="wipe2">Delete everything</button><p id="lerr"></p></form></section>
+<main>
+<section class="noprint"><h2>Add to your record</h2>
+<form id="f">
+<div class="row"><div><label for="kind">What is it</label><select id="kind" name="kind">
+<option value="term">Something the landlord told me</option><option value="photo">Room photo</option><option value="payment">Payment proof</option></select></div>
+<div><label for="date">Date</label><input id="date" name="date" type="date" required></div></div>
+<label for="what">What was said or shown</label><input id="what" name="what" required maxlength="140" placeholder="Deposit comes back within 7 days">
+<label for="note">Who said it or any detail</label><textarea id="note" name="note" maxlength="500"></textarea>
+<div class="row"><div><label for="pic">Photo or screenshot</label><input id="pic" name="pic" type="file" accept="image/*"></div>
+<div><label for="days">Notice days (if told)</label><input id="days" name="days" type="number" min="0" max="365"></div></div>
+<button>Save entry</button></form>
+<p id="saveError" role="alert" aria-live="polite"></p>
+<div id="busy" hidden><div class="sk"></div><div class="sk"></div></div></section>
+<section><h2>Timeline</h2><div id="tl"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div></section>
+<section class="noprint"><h2>Notice date</h2>
+<p>Enter the day you plan to leave. Pakka uses the longest notice period you logged.</p>
+<label for="mv">Planned move out</label><input id="mv" type="date"><p id="nt"></p></section>
+<section><h2>Move out pack</h2>
+<button id="mk" class="noprint">Build my pack</button><button id="pr" class="quiet noprint" hidden>Print or save as PDF</button>
+<div id="pack"></div></section>
+</main>
+<footer class="noprint"><button id="lk" class="quiet">Lock with passphrase</button><button id="ex" class="quiet">Export</button><button id="wipe" class="quiet">Delete everything</button>
+<p><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a></p></footer>
+<script src="app.js"></script></body></html>

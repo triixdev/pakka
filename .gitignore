@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+/devpost/learner-profile.md
+samples/
+reference/
+samples/
+agent/
+.claude/
+cover.png
+pakka-export*.json
+.env
